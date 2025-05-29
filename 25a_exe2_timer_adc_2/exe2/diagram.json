@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "Daniel Messias da Silva Pinto",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": -89.55,
+      "left": -34.8,
+      "attrs": { "builder": "pico-sdk" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot1",
+      "top": -215.8,
+      "left": 104.6,
+      "attrs": { "travelLength": "30" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -151.2,
+      "left": 328.2,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 15.6, "left": -73, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pot1:VCC", "pico:ADC_VREF", "red", [ "h-19.2", "v144" ] ],
+    [ "pot1:SIG", "pico:GP26", "yellow", [ "h-9.6", "v143.2" ] ],
+    [ "pot1:GND", "pico:GND.7", "black", [ "v0" ] ],
+    [ "bz1:1", "pico:GND.5", "black", [ "v0" ] ],
+    [ "bz1:2", "pico:GP12", "magenta", [ "v220.8", "h-461.2", "v-172.8" ] ],
+    [ "led1:A", "pico:GP12", "green", [ "v0" ] ],
+    [ "led1:C", "pico:GND.1", "green", [ "v0", "h-9.2", "v-115.2" ] ]
+  ],
+  "dependencies": {}
+}
