@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "../build/seven-seg/seven-seg.uf2"
+elf = "../build/seven-seg/seven-seg.elf"

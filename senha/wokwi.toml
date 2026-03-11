@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "../build/senha/senha.uf2"
+elf = "../build/senha/senha.elf"

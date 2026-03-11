@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-pi-pico", "id": "pico", "top": 160.05, "left": -159.6, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 313.4,
+      "left": -28.8,
+      "attrs": { "color": "green", "xray": "1", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text1",
+      "top": 230.4,
+      "left": 67.2,
+      "attrs": { "text": "Ao apertar" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 265.4,
+      "left": -28.8,
+      "attrs": { "color": "blue", "xray": "1", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 217.4,
+      "left": -28.8,
+      "attrs": { "color": "yellow", "xray": "1", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text2",
+      "top": 278.4,
+      "left": 67.2,
+      "attrs": { "text": "Ao soltar" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text3",
+      "top": 326.4,
+      "left": 67.2,
+      "attrs": { "text": "Enquanto apertado" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 303.6,
+      "left": -236.2,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 255.6,
+      "left": -236.2,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 207.6,
+      "left": -236.2,
+      "attrs": { "color": "yellow" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 364.8, "left": -240.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pico:GP22", "btn2:1.l", "green", [ "h0" ] ],
+    [ "btn3:2.r", "btn2:2.r", "black", [ "h19.4", "v48.2" ] ],
+    [ "btn2:2.r", "btn1:2.r", "black", [ "h19.4", "v48.2" ] ],
+    [ "pico:GND.8", "btn3:2.r", "black", [ "h145.2", "v57.6" ] ],
+    [ "gnd1:GND", "led1:C", "black", [ "v0" ] ],
+    [ "gnd1:GND", "led2:C", "black", [ "v0" ] ],
+    [ "gnd1:GND", "led3:C", "black", [ "v0" ] ],
+    [ "led1:A", "pico:GP6", "green", [ "v0" ] ],
+    [ "led2:A", "pico:GP10", "green", [ "v0" ] ],
+    [ "led3:A", "pico:GP14", "green", [ "v0" ] ],
+    [ "btn1:1.l", "pico:GP28", "green", [ "h0" ] ],
+    [ "btn3:1.l", "pico:GP18", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}

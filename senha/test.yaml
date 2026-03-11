@@ -1,0 +1,313 @@
+name: exe1
+author: Rafael Corsi
+version: 1
+
+steps:
+  - delay: 100ms
+
+##############################################
+# 1.Configura password
+#
+# Ao apertar o botão verifica se o led verde 
+# acende e ao soltar se ele apaga
+##############################################
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1  
+  - delay: 50ms  
+
+  - expect-pin:
+      part-id: led2
+      pin: A 
+      value: 1
+
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+  - delay: 50ms
+
+  - expect-pin:
+      part-id: led2
+      pin: A 
+      value: 0
+
+  - set-control:
+      part-id: btn4
+      control: pressed
+      value: 1  
+  - delay: 50ms
+
+  - expect-pin:
+      part-id: led2
+      pin: A 
+      value: 1
+
+  - set-control:
+      part-id: btn4
+      control: pressed
+      value: 0
+  - delay: 50ms
+
+  - expect-pin:
+      part-id: led2
+      pin: A 
+      value: 0
+
+  - set-control:
+      part-id: btn3
+      control: pressed
+      value: 1  
+  - delay: 50ms
+
+  - expect-pin:
+      part-id: led2
+      pin: A 
+      value: 1
+
+  - set-control:
+      part-id: btn3
+      control: pressed
+      value: 0
+  - delay: 50ms    
+
+  - expect-pin:
+      part-id: led2
+      pin: A 
+      value: 0
+
+  - set-control:
+      part-id: btn2
+      control: pressed
+      value: 1  
+  - delay: 50ms    
+
+  - expect-pin:
+      part-id: led2
+      pin: A 
+      value: 1
+
+  - set-control:
+      part-id: btn2
+      control: pressed
+      value: 0
+ 
+##############################################
+# 2. Leds piscam
+#
+# Verifica se leds piscam depois de configurados
+##############################################
+
+  - wait-pin:
+      part-id: led3
+      pin: A 
+      value: 1
+
+  - wait-pin:
+      part-id: led3
+      pin: A 
+      value: 0
+  - delay: 50ms    
+
+##############################################
+# 3. Acerta senha
+#
+##############################################
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1  
+  - delay: 50ms 
+
+  - expect-pin:
+      part-id: led2
+      pin: A 
+      value: 1
+
+  - expect-pin:
+      part-id: led3
+      pin: A 
+      value: 0
+
+  - expect-pin:
+      part-id: led1
+      pin: A 
+      value: 0
+
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+  - delay: 50ms
+
+  - expect-pin:
+      part-id: led2
+      pin: A 
+      value: 0
+
+  - set-control:
+      part-id: btn4
+      control: pressed
+      value: 1  
+  - delay: 50ms
+
+  - expect-pin:
+      part-id: led2
+      pin: A 
+      value: 1
+
+  - set-control:
+      part-id: btn4
+      control: pressed
+      value: 0
+  - delay: 50ms
+
+  - set-control:
+      part-id: btn3
+      control: pressed
+      value: 1  
+  - delay: 50ms
+
+  - expect-pin:
+      part-id: led2
+      pin: A 
+      value: 1
+
+  - set-control:
+      part-id: btn3
+      control: pressed
+      value: 0
+  - delay: 50ms    
+
+  - expect-pin:
+      part-id: led2
+      pin: A 
+      value: 0
+
+  - set-control:
+      part-id: btn2
+      control: pressed
+      value: 1  
+  - delay: 50ms    
+
+  - expect-pin:
+      part-id: led2
+      pin: A 
+      value: 1
+
+  - set-control:
+      part-id: btn2
+      control: pressed
+      value: 0
+  - delay: 50ms    
+
+  - expect-pin:
+      part-id: led2
+      pin: A 
+      value: 0
+
+##############################################
+# 4. Led acende ao acertar
+#
+# Verifica se leds piscam depois de acertar
+##############################################
+
+  - expect-pin:
+      part-id: led1
+      pin: A 
+      value: 0
+  - wait-pin:
+      part-id: led3
+      pin: A 
+      value: 1
+  - wait-pin:
+      part-id: led3
+      pin: A 
+      value: 0
+  - delay: 50ms    
+
+
+##############################################
+# 5. Sequencia errada
+#
+# Verifica se leds piscam depois de errar
+##############################################
+
+  - set-control:
+      part-id: btn4
+      control: pressed
+      value: 1  
+  - delay: 50ms
+
+  - set-control:
+      part-id: btn4
+      control: pressed
+      value: 0
+  - delay: 50ms
+
+# só mostrar que errou no final
+  - expect-pin:
+      part-id: led1
+      pin: A 
+      value: 0
+
+  - expect-pin:
+      part-id: led3
+      pin: A 
+      value: 0
+
+  - set-control:
+      part-id: btn4
+      control: pressed
+      value: 1  
+  - delay: 50ms
+
+  - set-control:
+      part-id: btn4
+      control: pressed
+      value: 0
+  - delay: 50ms
+
+  - set-control:
+      part-id: btn4
+      control: pressed
+      value: 1  
+  - delay: 50ms
+
+  - set-control:
+      part-id: btn4
+      control: pressed
+      value: 0
+  - delay: 50ms
+
+  - set-control:
+      part-id: btn4
+      control: pressed
+      value: 1  
+  - delay: 50ms
+
+  - set-control:
+      part-id: btn4
+      control: pressed
+      value: 0
+  - delay: 50ms
+
+##############################################
+# 5. Errar
+#
+# Verifica se leds piscam depois de acertar
+##############################################
+
+  - expect-pin:
+      part-id: led3
+      pin: A 
+      value: 0
+  - wait-pin:
+      part-id: led1
+      pin: A 
+      value: 1
+  - wait-pin:
+      part-id: led1
+      pin: A 
+      value: 0

@@ -1,0 +1,71 @@
+name: exe2
+author: Rafael Corsi
+version: 1
+
+steps:
+  - delay: 200ms
+
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1
+  - delay: 40ms
+
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+
+  - wait-pin:
+      part-id: led1
+      pin: A
+      value: 1
+
+  - delay: 60ms
+
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+
+  ###############
+  ## Segundo
+  ##############
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1
+
+  - delay: 80ms
+
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+
+  - wait-pin:
+      part-id: led1
+      pin: A
+      value: 1
+
+  - delay: 120ms
+
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+
+  - wait-pin:
+      part-id: led1
+      pin: A
+      value: 1
+
+  - wait-pin:
+      part-id: led1
+      pin: A
+      value: 0

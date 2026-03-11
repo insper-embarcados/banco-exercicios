@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "../build/barra-de-leds/barra-de-leds.uf2"
+elf = "../build/barra-de-leds/barra-de-leds.elf"

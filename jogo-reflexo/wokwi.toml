@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "../build/jogo-reflexo/jogo-reflexo.uf2"
+elf = "../build/jogo-reflexo/jogo-reflexo.elf"

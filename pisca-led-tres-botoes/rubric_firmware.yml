@@ -1,0 +1,11 @@
+forbiten:
+  - names:
+    - gpio_get
+    error_text: Você não deve fazer pooling no pino, deve utilizar IRS ler os pinos.
+
+  - names:
+    - add_repeating_timer_us
+    - add_repeating_timer_ms
+    - add_alarm_in_ms
+    - add_alarm_in_us
+    error_text: Você não pode usar timer!

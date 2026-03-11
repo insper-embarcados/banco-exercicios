@@ -1,0 +1,27 @@
+name: dois-sensores-distancia
+
+on:
+  push:
+    paths:
+      - 'dois-sensores-distancia/main.c'
+jobs:
+  dois-sensores-distancia:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: insper-embarcados/pico-build@v1
+      - uses: insper-embarcados/actions-wokwi-test@v3
+        with:
+          token: ${{ secrets.WOKWI_CLI_TOKEN }}
+          test_name: exe2
+      - uses: insper-embarcados/actions-firmware-rubric-check@v0
+        with:
+          c_file: dois-sensores-distancia/main.c
+          rubric_file: dois-sensores-distancia/rubric_firmware.yml
+        continue-on-error: true
+      - uses: insper-embarcados/actions-embedded-check@v1
+        with:
+          c_file: dois-sensores-distancia/main.c
+      - uses: insper-embarcados/actions-cppcheck@v1
+        with:
+          c_file: dois-sensores-distancia/main.c

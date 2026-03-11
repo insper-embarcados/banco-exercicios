@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "author": "Rafael Corsi",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": -3.25,
+      "left": 3.55,
+      "attrs": { "builder": "pico-sdk" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 169.4,
+      "left": 115.2,
+      "attrs": { "color": "white", "xray": "1", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 121.4,
+      "left": 115.2,
+      "attrs": { "color": "yellow", "xray": "1", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": 25.4,
+      "left": 115.2,
+      "attrs": { "color": "green", "xray": "1", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 73.4,
+      "left": 115.2,
+      "attrs": { "color": "blue", "xray": "1", "bounce": "0" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": -3.6, "left": -53.8, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -32.4,
+      "left": 129,
+      "attrs": { "color": "purple", "flip": "1" }
+    },
+    { "type": "wokwi-led", "id": "led3", "top": 73.2, "left": -73, "attrs": { "color": "green" } }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "led1:A", "pico:GP2", "red", [ "v0" ] ],
+    [ "led1:C", "pico:GND.2", "black", [ "v38.4", "h0.4" ] ],
+    [ "btn2:2.r", "btn1:2.r", "black", [ "h29", "v48.2" ] ],
+    [ "pico:GP27", "btn3:1.l", "blue", [ "h38.71", "v-28.8" ] ],
+    [ "btn1:1.l", "pico:GP17", "white", [ "h0" ] ],
+    [ "pico:GP21", "btn2:1.l", "gold", [ "h0" ] ],
+    [ "btn4:1.r", "btn3:2.r", "black", [ "v0", "h29", "v67.2" ] ],
+    [ "btn3:2.r", "btn2:2.r", "black", [ "h29", "v0.2" ] ],
+    [ "pico:GND.8", "btn4:1.r", "black", [ "h134.71" ] ],
+    [ "pico:GP28", "btn4:2.l", "green", [ "h0" ] ],
+    [ "pico:GP26", "led2:A", "purple", [ "h19.51", "v-86.4" ] ],
+    [ "led2:C", "btn4:1.r", "black", [ "v0", "h28.4" ] ],
+    [ "led3:A", "pico:GP9", "green", [ "v0" ] ],
+    [ "led3:C", "pico:GND.4", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

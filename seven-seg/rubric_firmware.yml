@@ -1,0 +1,10 @@
+forbiten:
+  - names:
+    - gpio_get
+    error_text: Você não deve fazer pooling no pino, deve utilizar IRS ler os pinos.
+
+shall_have:
+  - names:
+      - seven_seg_init
+      - even_seg_display
+    error_text: O seu código deve necessariamente implementar as duas funções seven_seg_init e even_seg_display(init val)

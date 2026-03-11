@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "../build/pisca-led-um-depois-o-outro/pisca-led-um-depois-o-outro.uf2"
+elf = "../build/pisca-led-um-depois-o-outro/pisca-led-um-depois-o-outro.elf"

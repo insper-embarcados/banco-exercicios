@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "../build/buzzer-com-timer/buzzer-com-timer.uf2"
+elf = "../build/buzzer-com-timer/buzzer-com-timer.elf"

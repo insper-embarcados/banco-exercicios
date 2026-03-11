@@ -1,0 +1,199 @@
+name: exe2
+author: Rafael Corsi
+version: 1
+
+steps:
+  - delay: 100ms
+
+################################
+#0
+#################################
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1  
+  - delay: 10ms  
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+
+  - wait-pin:
+      part-id: led1
+      pin: A
+      value: 1
+  - delay: 130ms  
+  - wait-pin:
+      part-id: led1
+      pin: A
+      value: 1
+  - expect-pin:
+      part-id: led2
+      pin: A
+      value: 0
+  - delay: 130ms  
+  - wait-pin:
+      part-id: led1
+      pin: A
+      value: 1
+  - delay: 130ms  
+  - wait-pin:
+      part-id: led1
+      pin: A
+      value: 1
+
+  - delay: 400ms  
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+  - expect-pin:
+      part-id: led2
+      pin: A
+      value: 0
+  - delay: 100ms  
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+  - expect-pin:
+      part-id: led2
+      pin: A
+      value: 0
+
+# #################################
+# # 1
+# #################################
+  - set-control:
+      part-id: btn2
+      control: pressed
+      value: 1  
+  - delay: 10ms  
+  - set-control:
+      part-id: btn2
+      control: pressed
+      value: 0
+
+  - wait-pin:
+      part-id: led2
+      pin: A
+      value: 1
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+  - delay: 300ms  
+  - wait-pin:
+      part-id: led2
+      pin: A
+      value: 1
+  - delay: 300ms  
+  - wait-pin:
+      part-id: led2
+      pin: A
+      value: 1
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+  - delay: 300ms  
+  - wait-pin:
+      part-id: led2
+      pin: A
+      value: 1
+  - delay: 300ms  
+  - wait-pin:
+      part-id: led2
+      pin: A
+      value: 1
+
+  - delay: 400ms  
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+  - expect-pin:
+      part-id: led2
+      pin: A
+      value: 0
+  - delay: 100ms  
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+  - expect-pin:
+      part-id: led2
+      pin: A
+      value: 0
+
+# #################################
+# # 2
+# #################################
+  - set-control:
+      part-id: btn2
+      control: pressed
+      value: 1  
+  - delay: 10ms  
+  - set-control:
+      part-id: btn2
+      control: pressed
+      value: 0
+
+  - wait-pin:
+      part-id: led2
+      pin: A
+      value: 1
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+  - delay: 300ms  
+
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1  
+  - delay: 10ms  
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+
+  - wait-pin:
+      part-id: led2
+      pin: A
+      value: 1
+
+  - wait-pin:
+      part-id: led1
+      pin: A
+      value: 1
+  - delay: 130ms  
+  - wait-pin:
+      part-id: led1
+      pin: A
+      value: 1
+  - delay: 130ms  
+  - wait-pin:
+      part-id: led1
+      pin: A
+      value: 1
+
+  - delay: 700ms  
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+  - expect-pin:
+      part-id: led2
+      pin: A
+      value: 0
+  - delay: 250ms  
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+  - expect-pin:
+      part-id: led2
+      pin: A
+      value: 0

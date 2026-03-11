@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "author": "Rafael Corsi",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico",
+      "id": "pico",
+      "top": -3.25,
+      "left": 3.55,
+      "attrs": { "builder": "pico-sdk" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 105.6, "left": -96.6, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": 124.8, "left": 325.8, "attrs": {} },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot1",
+      "top": 5,
+      "left": 114.2,
+      "attrs": { "travelLength": "30" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text1",
+      "top": 0,
+      "left": 192,
+      "attrs": { "text": "Agudo .... Grave" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 2.4,
+      "left": -113.4,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pico:3V3", "pot1:VCC", "red", [ "h0" ] ],
+    [ "pico:GP28", "pot1:SIG", "green", [ "h0" ] ],
+    [ "pot1:GND", "gnd2:GND", "black", [ "v0" ] ],
+    [ "bz1:2", "pico:GP6", "red", [ "v0" ] ],
+    [ "bz1:1", "gnd1:GND", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

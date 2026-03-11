@@ -1,0 +1,112 @@
+name: exe2
+author: Rafael Corsi
+version: 1
+
+steps:
+  - delay: 100ms
+
+#################################
+# 0
+#################################
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1  
+  - delay: 10ms  
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+
+  - wait-pin-change:
+      part-id: led1
+      pin: A
+ 
+  - expect-pin:
+      part-id: led2
+      pin: A
+      value: 0
+
+  - wait-pin-change:
+      part-id: led1
+      pin: A
+ 
+  - expect-pin:
+      part-id: led2
+      pin: A
+      value: 0
+ 
+  - wait-pin-change:
+      part-id: led2
+      pin: A
+      
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+ 
+  - wait-pin-change:
+      part-id: led2
+      pin: A
+      
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+
+  - wait-pin-change:
+      part-id: led2
+      pin: A
+      
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+
+  - delay: 1000ms
+  
+  - set-control:
+      part-id: btn2
+      control: pressed
+      value: 1  
+  - delay: 10ms  
+  - set-control:
+      part-id: btn2
+      control: pressed
+      value: 0
+
+  - wait-pin-change:
+      part-id: led2
+      pin: A
+      
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+
+  - wait-pin-change:
+      part-id: led2
+      pin: A
+      
+  - expect-pin:
+      part-id: led1
+      pin: A
+      value: 0
+
+  - wait-pin-change:
+      part-id: led1
+      pin: A
+ 
+  - expect-pin:
+      part-id: led2
+      pin: A
+      value: 0
+
+  - wait-pin-change:
+      part-id: led1
+      pin: A
+ 
+  - expect-pin:
+      part-id: led2
+      pin: A
+      value: 0

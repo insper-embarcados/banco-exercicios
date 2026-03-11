@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "../build/dois-sensores-distancia/dois-sensores-distancia.uf2"
+elf = "../build/dois-sensores-distancia/dois-sensores-distancia.elf"
